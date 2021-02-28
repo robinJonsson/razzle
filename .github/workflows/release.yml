@@ -32,13 +32,13 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Potentially publish stable to npm
+      - name: Potentially publish three to npm
         run: |
           if \
             ls ~/.npmrc >/dev/null 2>&1 && \
             [[ ! $(git describe --exact-match 2> /dev/null || :) =~ -canary ]]; \
           then
-            yarn run lerna publish from-git --yes
+            yarn run lerna publish from-git --npm-tag three --yes
           else
             echo "Did not publish"
           fi

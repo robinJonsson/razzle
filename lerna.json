@@ -16,7 +16,7 @@
     "publish": {
       "npmClient": "npm",
       "allowBranch": [
-        "master",
+        "three",
         "canary"
       ],
       "registry": "https://registry.npmjs.org/"
