@@ -214,6 +214,22 @@ Razzle comes with most of ES6 stuff you need. However, if you want to add your o
 
 A word of advice: the `.babelrc` file will replace the internal razzle babelrc template. You must include at the very minimum the default razzle/babel preset.
 
+## Customizing PostCSS Config
+
+Razzle comes with default PostCSS config, that transforms your css based on targeted browsers or runtime environments, thanks to [postcss-preset-env](https://github.com/csstools/postcss-preset-env). However, if you want to add custom plugins, just add a `postcss.config.js` file to the root of your project.
+
+You can read more about common PostCSS Config [here](https://github.com/postcss/postcss-load-config).
+
+```js
+module.exports = {
+  parser: 'sugarss',
+  map: false,
+  plugins: {
+    'postcss-plugin': {}
+  }
+}
+```
+
 ## Extending Webpack
 
 You can also extend the underlying webpack config. Create a file called `razzle.config.js` in your project's root.
